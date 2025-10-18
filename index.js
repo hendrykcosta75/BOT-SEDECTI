@@ -1,8 +1,11 @@
 import { Client } from 'whatsapp-web.js';
 import qrcode from 'qrcode-terminal';
 
-const client = new Client();
-
+const client = new Client({
+    puppeteer: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox']
+    }
+});
 
 import { returnCurso } from './models/cursos.js';
 import { getServicos } from './models/servicos.js';
