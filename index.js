@@ -11,10 +11,6 @@ import { returnCurso } from './models/cursos.js';
 import { getServicos } from './models/servicos.js';
 
 
-const cursos =  await returnCurso();
-const servicos = await getServicos();
-
-
 client.on('qr', (qr) => {
     qrcode.generate(qr, {small: true});
     console.log('QR CODE RECEBIDO, escaneie com seu celular.');
@@ -44,9 +40,11 @@ client.on('ready', () => {
 
 
 
-client.on('message', msg => {
+client.on('message', async msg => {
 
 
+    const cursos =  await returnCurso();
+    const servicos = await getServicos();
 
     let cursos_status = "Cursos e Seus Status:  ";
     let servicos_oferecidos = "Servicos da SEDECTI, status, descricao e link do servico: ";
