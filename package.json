@@ -1,14 +1,18 @@
 {
-  "name": "bot-teste",
+  "name": "bot-sedecti",
   "version": "1.0.0",
-  "description": "",
+  "description": "Bot de atendimento WhatsApp da SEDECTI (São Miguel dos Campos) com dados de cursos e serviços via API smcmais",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node --env-file=.env index.js"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "whatsapp",
+    "bot",
+    "sedecti",
+    "smcmais"
+  ],
   "license": "ISC",
   "dependencies": {
     "qrcode-terminal": "^0.12.0",
